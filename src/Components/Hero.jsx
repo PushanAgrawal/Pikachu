@@ -1,56 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import { Pokedex } from 'pokeapi-js-wrapper'
-
-// const Hero = () => {
-//     const [pokemonData, setpokemonData] =useState([])
-//     const P = new Pokedex();
-//     useEffect(()=>{
-//         setpokemonData(getAllPokemons())
-
-
-//     },[])
-//     const getAllPokemons = async () => {
-//         const limit = 100; // Set the limit for how many Pokémon to retrieve at once
-//         const totalPokemons = 898; // Total number of Pokémon available
-//         const allPokemons = [];
-    
-//         for (let offset = 0; offset < totalPokemons; offset += limit) {
-//             try {
-//                 const data = await P.getPokemonsList({ limit, offset });
-//                 allPokemons.push(...data.results);
-//             } catch (error) {
-//                 console.error('Error` fetching Pokémon:', error);
-//             }
-//         }
-//     console.log(allPokemons)
-//     P.getMachineById(1).then(function(response) {
-//         console.log(response)
-//       })
-//       P.getPokemonByName("bulbasaur").then(function(response) {
-//         console.log(response)
-//       })
-//         return allPokemons;
-//     };
-//     getAllPokemons()
-//   return (
-//     <div className='flex p-10 justify-center '>
-//         <div className='flex-row'>
-//             <div>
-//            className
-//             </div>
-//             image
-//             <div>
-
-//             </div>
-//         </div>
-        
-//     </div>
-//   )
-// }
-
-// export default Hero
-
-// App.js
 import React, { useState, useEffect } from 'react';
 import {Pokedex} from "pokeapi-js-wrapper"
 import {Link} from "react-router-dom"
@@ -100,7 +47,7 @@ const App = () => {
   return (
     <>
      {!splashScreen && (
-    <div className='flex items-center'>
+    <div className='flex '>
       <img src={splash} alt="" />
 
     </div>)}

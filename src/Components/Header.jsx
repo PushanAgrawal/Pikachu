@@ -81,7 +81,7 @@ const Header = () => {
           
           {/* Dropdown with Suggestions */}
           {suggestions.length > 0 && (
-            <ul className="absolute top-12 left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
+            <ul className="absolute z-10 top-12 left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg">
               {suggestions.map((pokemon) => (
                 <li 
                   key={pokemon.name} 
