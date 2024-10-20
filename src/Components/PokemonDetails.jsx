@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Pokedex } from 'pokeapi-js-wrapper';
+import fire from "../assets/fire.jpg"
+import grass from "../assets/grass.jpg"
+import water from "../assets/water.jpg"
+const images = {
+  "fire":fire,
+  "grass":grass,
+  "water":water,
+}
 
 const PokemonDetails = () => {
   const { name } = useParams(); // Get Pokémon name from URL
@@ -36,7 +44,8 @@ const PokemonDetails = () => {
           <div className="flex items-center">
             <span className="text-red-500 text-2xl font-bold">{pokemon.stats[0].base_stat} HP</span>
             <img
-              src={`/src/assets/${pokemon.types[0].type.name}.jpg`}
+              // src={`/src/assets/${pokemon.types[0].type.name}.jpg`}
+              src={images[`${pokemon.types[0].type.name}`]}
               alt={pokemon.types[0].type.name}
               className="w-8 h-8 ml-2 bg-white"
             />
