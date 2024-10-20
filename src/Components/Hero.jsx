@@ -58,7 +58,24 @@ import {Link} from "react-router-dom"
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
+  const [splashScreen, setsplashScreen] = useState(0);
+  
   const P = new Pokedex();
+  useEffect(() => {
+    //Idle timer
+
+    let timerId;
+
+    const resetTimer = () => {
+      clearTimeout(timerId);
+      timerId = setTimeout(() => {
+        setsplashScreen(1)
+      },2 * 1000); //30 sec idle time
+    };
+
+   resetTimer()
+    
+  }, []);
 
   useEffect(() => {
     // Fetch Pokémon data
@@ -80,11 +97,24 @@ const App = () => {
   };
 
   return (
+    <>
+     {!splashScreen && (
+    <div className='flex items-center'>
+      <img src="/src/assets/splash.gif" alt="" />
+
+    </div>)}
+    {splashScreen && (
     <div className="min-h-screen bg-gray-100">
       {/* Hero Section */}
       <section className="bg-blue-600 py-20 text-white text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to the Pokémon World</h1>
         <p className="text-lg">Catch them all and explore categories!</p>
+        <button
+   
+        className="mt-8 px-6 py-3 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-600 transition duration-200"
+      >
+        CHALO BATTLE KARE
+      </button>
       </section>
 
       {/* Carousel for Pokémon Cards */}
@@ -176,7 +206,8 @@ const App = () => {
               ))}
         </div>
       </section>
-    </div>
+    </div>)}
+    </>
   );
 };
 
