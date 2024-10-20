@@ -54,11 +54,12 @@
 import React, { useState, useEffect } from 'react';
 import {Pokedex} from "pokeapi-js-wrapper"
 import {Link} from "react-router-dom"
+import splash from "../assets/splash.gif"
 
 const App = () => {
   const [pokemons, setPokemons] = useState([]);
   const [filteredPokemons, setFilteredPokemons] = useState([]);
-  const [splashScreen, setsplashScreen] = useState(0);
+  const [splashScreen, setsplashScreen] = useState(false);
   
   const P = new Pokedex();
   useEffect(() => {
@@ -69,7 +70,7 @@ const App = () => {
     const resetTimer = () => {
       clearTimeout(timerId);
       timerId = setTimeout(() => {
-        setsplashScreen(1)
+        setsplashScreen(true)
       },2 * 1000); //30 sec idle time
     };
 
@@ -100,7 +101,7 @@ const App = () => {
     <>
      {!splashScreen && (
     <div className='flex items-center'>
-      <img src="/src/assets/splash.gif" alt="" />
+      <img src={splash} alt="" />
 
     </div>)}
     {splashScreen && (
