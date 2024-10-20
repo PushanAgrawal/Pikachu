@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       cursor: {
-        default: 'url("Assets/ball3.png") 20 20, default',
+        default: 'url("/src/assets/ball3.png") 20 20, default',
        
       },
     },

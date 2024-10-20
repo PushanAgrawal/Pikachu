@@ -110,12 +110,15 @@ const App = () => {
       <section className="bg-blue-600 py-20 text-white text-center">
         <h1 className="text-4xl font-bold mb-4">Welcome to the Pokémon World</h1>
         <p className="text-lg">Catch them all and explore categories!</p>
+        <Link to={"/PokemonBattle"}>
         <button
+        
    
         className="mt-8 px-6 py-3 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-600 transition duration-200"
       >
         CHALO BATTLE KARE
       </button>
+        </Link>
       </section>
 
       {/* Carousel for Pokémon Cards */}
