@@ -7,6 +7,7 @@ const PokemonBattle = () => {
   const [player2, setPlayer2] = useState(null);
   const [winner, setWinner] = useState(null);
   const [disabled, setDisabled] = useState(1)
+  const [play,setPlay] = useState("PLAY")
   const P = new Pokedex();
 
   // Fetch list of all Pokémon names
@@ -30,6 +31,7 @@ const PokemonBattle = () => {
     P.getPokemonByName(randomName2).then((data) => setPlayer2(data));
     setWinner(null); // Reset winner on new round
     setDisabled(0) // enable battle button
+    setPlay("PLAY AGAIN")
   };
 
   // Determine the winner based on HP
@@ -105,7 +107,7 @@ const PokemonBattle = () => {
         onClick={fetchRandomPokemon}
         className="mt-4 px-6 py-2 bg-gray-400 text-white rounded-full hover:bg-gray-500 transition duration-200"
       >
-        Play Again
+       {play}
       </button>
     </div>
   );

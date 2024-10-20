@@ -135,7 +135,7 @@ const App = () => {
                     other
                     .dream_world.front_default}
                 alt={pokemon.name}
-                className="w-full h-40 object-cover"
+                className="w-full h-40 "
               />
               <div className="p-4">
                 <h3 className="text-lg font-bold">{pokemon.name}</h3>
@@ -184,9 +184,12 @@ const App = () => {
                   className="bg-white rounded-lg shadow-md overflow-hidden"
                 >
                   <img
-                    src={pokemon.sprites.front_default}
+                    // src={pokemon.sprites.front_default}
+                    src={pokemon.sprites.
+                      other
+                      .dream_world.front_default}
                     alt={pokemon.name}
-                    className="w-full h-40 object-cover"
+                    className="w-full h-40 "
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-bold">{pokemon.name}</h3>
@@ -199,9 +202,12 @@ const App = () => {
                   className="bg-white rounded-lg shadow-md overflow-hidden"
                 >
                   <img
-                    src={pokemon.sprites.front_default}
+                   src={pokemon.sprites.
+                    other
+                    .dream_world.front_default}
+                    // src={pokemon.sprites.front_default}
                     alt={pokemon.name}
-                    className="w-full h-40 object-cover"
+                    className="w-full h-40 "
                   />
                   <div className="p-4">
                     <h3 className="text-lg font-bold">{pokemon.name}</h3>
